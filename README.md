@@ -12,7 +12,7 @@ Intention is to run Gen1 on RP2040 with small touch display.
 Initial testing platform is [Waveshare RP2040-Touch-LCD-1.28](https://www.waveshare.com/wiki/RP2040-Touch-LCD-1.28#Overview).
 
 
-![Summoned](gifs/pentacle2-demo-3x.gif)
+![Summoned](gifs/pentacle2-demo3x.gif)
 ![Fatso](gifs/fatso-erect-4x.gif)
 ![Femme](gifs/fem-erect-4x.gif)
 
