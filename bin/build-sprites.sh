@@ -26,3 +26,9 @@ mv ../sprites_bmp/candles.spr ../sprites/
 
 python3 bmp2spr.py ../sprites_bmp/candleflame.bmp 8
 mv ../sprites_bmp/candleflame.spr ../sprites/
+
+python3 bmp2spr.py ../sprites_bmp/battery.bmp 10
+mv ../sprites_bmp/battery.spr ../sprites/
+
+python3 bmp2spr.py ../sprites_bmp/prideflag.bmp 1
+mv ../sprites_bmp/prideflag.spr ../sprites/

@@ -65,7 +65,7 @@ def convert(filename, frames=1):
                 break
             out.write(pal[i].to_bytes(3,'little'))
         block = int(width / (8 / depth))
-        if depth == 1:
+        if block * height != size:
             blockpad = block + (4 - (block % 4))
         else:
             blockpad = block
