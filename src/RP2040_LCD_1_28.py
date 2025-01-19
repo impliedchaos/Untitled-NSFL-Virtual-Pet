@@ -410,6 +410,7 @@ class Touch_CST816T(object):
         self.tim = Timer()     
         self.rst=Pin(rst_pin,Pin.OUT)
         self.Reset()
+        self.last = time.time()
         bRet=self.WhoAmI()
         if bRet :
             print("Success:Detected CST816T.")
@@ -481,6 +482,7 @@ class Touch_CST816T(object):
         self.Y_point=y_point
         
     def Int_Callback(self,pin):
+        self.last = time.time()
         if self.Mode == 0 :
             self.Gestures = self._read_byte(0x01)
 
