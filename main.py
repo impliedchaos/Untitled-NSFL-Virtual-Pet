@@ -50,7 +50,7 @@ hbuf = memoryview(LCD.buffer)
 hscr = framebuf.FrameBuffer(hbuf,120,120,framebuf.RGB565)
 vmem()
 
-char = Spritle(16384,'sprites/fem1-idle1-erect.spr')
+char = Spritle(16384,'sprites/fem-idle1-erect.spr')
 vmem()
 
 
@@ -105,14 +105,11 @@ def GeneratePalette() :
     
 def reroll():
     chars = [
-        'fatso-idle1-erect',
-        'fatso-idle1-flacid',
-        'fem1-idle1-erect',
-        'fem1-idle1-flacid',
-        'masc1-idle1-erect',
-        'masc1-idle1-flacid',
+        'fat',
+        'fem',
+        'fit',
     ]
-    char.load_sprite('sprites/'+chars[randint(0,len(chars)-1)]+'.spr')
+    char.load_sprite('sprites/'+chars[randint(0,len(chars)-1)]+'-idle1-flaccid.spr')
     GeneratePalette()
     vmem()
     return
@@ -121,6 +118,7 @@ pent = Spritle(686,'sprites/pentaclemono.spr')
 candles = Spritle(120,'sprites/candles.spr')
 cflames = Spritle(128,'sprites/candleflame.spr')
 battery = Spritle(480,'sprites/battery.spr')
+#fm = Spritle(1024,'sprites/fm-dildo-anim.spr')
 
 backg = Spritle(2312,'sprites/background01.spr')
 backg.palette.pixel(0,0,RGB(32,0,32))
@@ -133,12 +131,33 @@ vmem()
 
 summon = False
 drawtick = -1
+sleepy = False
+sleepytime = time.time()
 
 while True:
+    if (sleepy):
+        if (Touch.Gestures == 0xC):
+            Touch.Gestures = None
+            if (time.time() - sleepytime > 2):
+                sleepy = False
+                LCD.set_bl_pwm(65535)
+                sleepytime=time.time()
+                drawtick = 99
+        else:
+            for i in range(100):
+                machine.idle()
+            continue
+    elif (batlvl < 9):
+        if (time.time() - Touch.last > 30):
+            sleepy = True
+            LCD.set_bl_pwm(0)
+            sleepytime = time.time() - 2
+            continue
     if (Touch.Gestures == 5):
         Touch.Gestures = None
         if not summon:
             reroll()
+            #fm.current_frame = fm.frames - 1
             summon = True
     elif (Touch.Gestures == 4):
         # swipe right keep
@@ -154,6 +173,11 @@ while True:
         summon = False
     elif (Touch.Gestures == 0xC):
         Touch.Gestures = None
+        if ( time.time() - sleepytime > 2):
+            sleepy = True
+            LCD.set_bl_pwm(0)
+            sleepytime = time.time()
+            continue
 
     drawtick = (drawtick + 1) % 100
     if drawtick == 0:
@@ -161,7 +185,7 @@ while True:
     
     ttick = drawtick % 10
         
-    LCD.fill(bg)
+    #LCD.fill(bg)
     
     hscr.fill(bg)
     backg.blit_frameidx(hscr,ttick * -1,ttick * -1)
@@ -181,6 +205,7 @@ while True:
 
 
     if summon:
+        #fm.blit_framenext(hscr, 56, 50)
         char.blit_framenext(hscr, 28, 18)
     halfblit()
     
@@ -188,7 +213,10 @@ while True:
         LCD.write_text("Tap to Summon", 70, 40, 1, LCD.white)
         
     battery.blit_frameidx(LCD, 114, 3, batlvl)
-        
+
+    LCD.write_text("{:02}:{:02}".format(time.localtime()[3],time.localtime()[4]),100,230,1,LCD.white)
     LCD.show()
-    time.sleep(0.09)
+    #time.sleep(0.09)
+    for i in range(90):
+        machine.idle()
     #print(str(Touch.Gestures))

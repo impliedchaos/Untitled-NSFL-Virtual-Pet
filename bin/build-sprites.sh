@@ -6,20 +6,39 @@ mv ../sprites_bmp/background01.spr ../sprites/
 python3 bmp2spr.py ../sprites_bmp/pentaclemono.bmp 1
 mv ../sprites_bmp/pentaclemono.spr ../sprites/
 
-python3 bmp2spr.py ../sprites_bmp/fatso-idle1-erect.bmp 4
-mv ../sprites_bmp/fatso-idle1-erect.spr ../sprites/
-python3 bmp2spr.py ../sprites_bmp/fatso-idle1-flacid.bmp 4
-mv ../sprites_bmp/fatso-idle1-flacid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fat-idle1-erect.bmp 4
+mv ../sprites_bmp/fat-idle1-erect.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fat-idle1-flaccid.bmp 4
+mv ../sprites_bmp/fat-idle1-flaccid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fat-ride1-flaccid.bmp 8
+mv ../sprites_bmp/fat-ride1-flaccid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fat-ride1-erect.bmp 8
+mv ../sprites_bmp/fat-ride1-erect.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fat-ride1-cum.bmp 8
+mv ../sprites_bmp/fat-ride1-cum.spr ../sprites/
 
-python3 bmp2spr.py ../sprites_bmp/fem1-idle1-erect.bmp 4
-mv ../sprites_bmp/fem1-idle1-erect.spr ../sprites/
-python3 bmp2spr.py ../sprites_bmp/fem1-idle1-flacid.bmp 4
-mv ../sprites_bmp/fem1-idle1-flacid.spr ../sprites/
 
-python3 bmp2spr.py ../sprites_bmp/masc1-idle1-erect.bmp 4
-mv ../sprites_bmp/masc1-idle1-erect.spr ../sprites/
-python3 bmp2spr.py ../sprites_bmp/masc1-idle1-flacid.bmp 4
-mv ../sprites_bmp/masc1-idle1-flacid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fem-idle1-erect.bmp 4
+mv ../sprites_bmp/fem-idle1-erect.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fem-idle1-flaccid.bmp 4
+mv ../sprites_bmp/fem-idle1-flaccid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fem-ride1-flaccid.bmp 8
+mv ../sprites_bmp/fem-ride1-flaccid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fem-ride1-erect.bmp 8
+mv ../sprites_bmp/fem-ride1-erect.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fem-ride1-cum.bmp 8
+mv ../sprites_bmp/fem-ride1-cum.spr ../sprites/
+
+python3 bmp2spr.py ../sprites_bmp/fit-idle1-erect.bmp 4
+mv ../sprites_bmp/fit-idle1-erect.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fit-idle1-flaccid.bmp 4
+mv ../sprites_bmp/fit-idle1-flaccid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fit-ride1-flaccid.bmp 8
+mv ../sprites_bmp/fit-ride1-flaccid.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fit-ride1-erect.bmp 8
+mv ../sprites_bmp/fit-ride1-erect.spr ../sprites/
+python3 bmp2spr.py ../sprites_bmp/fit-ride1-cum.bmp 8
+mv ../sprites_bmp/fit-ride1-cum.spr ../sprites/
 
 python3 bmp2spr.py ../sprites_bmp/candles.bmp 5
 mv ../sprites_bmp/candles.spr ../sprites/
@@ -32,3 +51,6 @@ mv ../sprites_bmp/battery.spr ../sprites/
 
 python3 bmp2spr.py ../sprites_bmp/prideflag.bmp 1
 mv ../sprites_bmp/prideflag.spr ../sprites/
+
+python3 bmp2spr.py ../sprites_bmp/fm-dildo-anim.bmp 8
+mv ../sprites_bmp/fm-dildo-anim.spr ../sprites/
